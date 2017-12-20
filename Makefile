@@ -10,27 +10,35 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Colleen
+COLLEEN = Colleen
+
+GRACE = Grace
 
 ifeq ($(HOSTTYPE),)
 	HOSTTYPE := $(shell uname -m)_$(shell uname -s)
 endif
 
-WFLAGS = -Wall -Wextra -Werror -g
+WFLAGS = -Wall -Wextra -Werror
 
 CC = gcc 
 
 
-SRC = 	\
+SRCGRACE = 	\
+		Grace.c
+
+SRCCOLLEEN = 	\
 		Colleen.c 
 
 INCLUDE = -I includes/
 
 
-all : $(NAME)
+all : $(COLLEEN) $(GRACE) 
 
-$(NAME) :  $(SRC)
-	$(CC) -g -o  $(NAME) $(SRC) $(LIBFLAG) $(WFLAGS) $(INCLUDE) 
+$(COLLEEN) :  $(SRCCOLEEN)
+	$(CC) -o  $(COLLEEN) $(SRCCOLLEEN) $(LIBFLAG) $(WFLAGS) $(INCLUDE) 
+
+$(GRACE) :  $(SRCGRACE)
+	$(CC) -o  $(GRACE) $(SRCGRACE) $(LIBFLAG) $(WFLAGS) $(INCLUDE) 
 
 clean :
 	echo 'clean'

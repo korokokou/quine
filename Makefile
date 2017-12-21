@@ -6,7 +6,7 @@
 #    By: takiapo <takiapo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 21:45:12 by takiapo           #+#    #+#              #
-#*   Updated: 2017/12/21 01:04:43 by                  ###   ########.fr       *#
+#*   Updated: 2017/12/21 01:12:07 by                  ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,9 @@ CC = gcc
 SRCGRACE = 	\
 		Grace.c
 
+SRCCOLLEEN = 	\
+		Colleen.c 
+
 SRCSULLY = 	\
 		Sully.c 
 
@@ -42,7 +45,7 @@ $(COLLEEN) :  $(SRCCOLEEN)
 $(GRACE) :  $(SRCGRACE)
 	$(CC) -o  $(GRACE) $(SRCGRACE) $(LIBFLAG) $(WFLAGS) $(INCLUDE) 
 $(SULLY) :  $(SRCSULLY)
-	$(CC) -o  $(GRACE) $(SRCGRACE) $(LIBFLAG) $(WFLAGS) $(INCLUDE) 
+	$(CC) -o  $(SULLY) $(SRCSULLY) $(LIBFLAG) $(WFLAGS) $(INCLUDE) 
 clean :
 	echo 'clean'
 
